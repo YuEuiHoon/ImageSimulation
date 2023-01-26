@@ -937,7 +937,7 @@ void CImageSimulationDlg::OnBnClickedButtonPatternMatching()
 		InitRANSACParam(1);
 
 		__RANSAC _r;
-		_r = IP.RansacProcess(RANSAC_LINE, m_mat, m_rRect, TRUE, m_nGKernel, m_nRectTH, TRUE, m_nRangeInRect, m_fSamplingRatio, m_nPerInRect);
+		_r = IP.RansacProcess(RANSAC_LINE, m_mat, m_rRect, TRUE, m_nGKernel, m_nRectTH, m_bImageDebug, m_nRangeInRect, m_fSamplingRatio, m_nPerInRect);
 		SetRSRResult(_r.ran_rect.bFind, _r.ran_rect);
 	}
 
@@ -1535,7 +1535,7 @@ BOOL CImageSimulationDlg::Inspection(CString path)
 	{
 		InitRANSACParam(1);
 		
-		_r = IP.RansacProcess(RANSAC_LINE, m_mat, m_rRect, TRUE, m_nGKernel, m_nRectTH, FALSE, m_nRangeInRect, m_fSamplingRatio, m_nPerInRect);
+		_r = IP.RansacProcess(RANSAC_LINE, m_mat, m_rRect, TRUE, m_nGKernel, m_nRectTH, m_bImageDebug, m_nRangeInRect, m_fSamplingRatio, m_nPerInRect);
 		SetRSRResult(_r.ran_rect.bFind, _r.ran_rect);
 
 		if(_r.ran_rect.bFind == TRUE)
@@ -1550,7 +1550,7 @@ BOOL CImageSimulationDlg::Inspection(CString path)
 		InitRANSACParam(0);
 		
 		//bRtn = CircleFit(m_nPyrRS, m_mat, SetCircleRect(m_rRect), _r.ran_circ, TRUE, m_nGKernel, m_nTH, m_bImageDebug);
-		_r = IP.RansacProcess(RANSAC_CIRCLE, m_mat, SetCircleRect(m_rRect), TRUE, m_nGKernel, m_nTH, FALSE, m_nRangeInRect, m_fSamplingRatio, m_nPerInRect);
+		_r = IP.RansacProcess(RANSAC_CIRCLE, m_mat, SetCircleRect(m_rRect), TRUE, m_nGKernel, m_nTH, m_bImageDebug, m_nRangeInRect, m_fSamplingRatio, m_nPerInRect);
 		SetRSCResult(_r.ran_circ.bFind, _r.ran_circ);
 		
 		if(m_InsResult.mRS.ran_circ.bFind == TRUE)
