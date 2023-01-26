@@ -52,19 +52,7 @@ END_MESSAGE_MAP()
 
 CImageSimulationDlg::CImageSimulationDlg(CWnd* pParent /*=NULL*/)
 	: CDialog(CImageSimulationDlg::IDD, pParent)
-<<<<<<< HEAD
 	, m_nPyrRS(0)
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-	, m_nPyrRS(0)
-=======
-	, m_nPyrRS(1)
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
-	, m_nPyrRS(1)
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	, m_nPyrDN(2)
 	, m_nGKernel(15)
 	, m_nTH(150)
@@ -79,11 +67,6 @@ CImageSimulationDlg::CImageSimulationDlg(CWnd* pParent /*=NULL*/)
 	, m_sPreLearnMode(_T(""))
 	, m_sOpenCVVersion(_T(""))
 	, m_bFolderInspect(FALSE)
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	, m_dbFov(3.45)
 	, m_fSamplingRatio(0.7f)
 	, m_fMinCircleRadius(0)
@@ -94,13 +77,6 @@ CImageSimulationDlg::CImageSimulationDlg(CWnd* pParent /*=NULL*/)
 	, m_nCircleFindMode(0)
 	, m_nRectFindMode(0)
 	, m_nRectTH(50)
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 {
 
 }
@@ -125,11 +101,6 @@ void CImageSimulationDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Text(pDX, IDC_STATIC_PRE_LEARNMODE, m_sPreLearnMode);
 	DDX_Text(pDX, IDC_STATIC_OPENCV_VERSION, m_sOpenCVVersion);
 	DDX_Check(pDX, IDC_CHECK_FOLDER_INSPECT, m_bFolderInspect);
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	DDX_Text(pDX, IDC_EDIT_FOV, m_dbFov);
 	DDX_Text(pDX, IDC_EDIT_SAMPLING_RATIO, m_fSamplingRatio);
 	DDX_Text(pDX, IDC_EDIT_MIN_CIRCLE_RADIUS, m_fMinCircleRadius);
@@ -140,13 +111,6 @@ void CImageSimulationDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Radio(pDX, IDC_RADIO_CIRCLE_FIND_MODE, m_nCircleFindMode);
 	DDX_Radio(pDX, IDC_RADIO_CIRCLE_FIND_MODE3, m_nRectFindMode);
 	DDX_Text(pDX, IDC_EDIT_RECT_TH, m_nRectTH);
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 }
 
 BEGIN_MESSAGE_MAP(CImageSimulationDlg, CDialog)
@@ -167,23 +131,11 @@ BEGIN_MESSAGE_MAP(CImageSimulationDlg, CDialog)
 	ON_WM_TIMER()
 	ON_BN_CLICKED(IDC_CHECK_FOLDER_INSPECT, &CImageSimulationDlg::OnBnClickedCheckFolderInspect)
 	ON_BN_CLICKED(IDC_BUTTON_INSPECT, &CImageSimulationDlg::OnBnClickedButtonInspect)
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	ON_BN_CLICKED(IDC_RADIO_CIRCLE_FIND_MODE, &CImageSimulationDlg::OnBnClickedRadioCircleFindMode)
 	ON_BN_CLICKED(IDC_RADIO_CIRCLE_FIND_MODE2, &CImageSimulationDlg::OnBnClickedRadioCircleFindMode2)
 	ON_BN_CLICKED(IDC_RADIO_CIRCLE_FIND_MODE3, &CImageSimulationDlg::OnBnClickedRadioCircleFindMode3)
 	ON_BN_CLICKED(IDC_RADIO_CIRCLE_FIND_MODE4, &CImageSimulationDlg::OnBnClickedRadioCircleFindMode4)
 	ON_BN_CLICKED(IDC_BUTTON_CIRCLE_FIND, &CImageSimulationDlg::OnBnClickedButtonCircleFind)
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 END_MESSAGE_MAP()
 
 
@@ -315,23 +267,6 @@ void CImageSimulationDlg::CreateBitmapInfo(int w, int h, int bpp)
 }
 void CImageSimulationDlg::DrawImage(Mat mat)
 {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-	// 	CClientDC dc(GetDlgItem(IDC_STATIC_OUT));
-	// 	CRect rect;
-	// 	GetDlgItem(IDC_STATIC_OUT)->GetClientRect(&rect);
-	// 	SetStretchBltMode(dc.GetSafeHdc(), COLORONCOLOR);
-	// 	StretchDIBits(dc.GetSafeHdc(), 0, 0, rect.Width(), rect.Height(), 0, 0, mat.cols, mat.rows, mat.data, m_pBitmapInfo, DIB_RGB_COLORS, SRCCOPY);
-<<<<<<< HEAD
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	if(mat.empty())
 		return;
 
@@ -344,11 +279,6 @@ void CImageSimulationDlg::DrawImage(Mat mat)
 	cvtColor(mat, dp, CV_GRAY2BGR);
 
 	if(m_bShowROI)
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	{
 		Rect showRect;
 		showRect = SetCircleRect(m_rRect);
@@ -360,25 +290,6 @@ void CImageSimulationDlg::DrawImage(Mat mat)
 
 	if(m_InsResult.mRS.ran_circ.bFind == TRUE || m_InsResult.mMC.bFind == TRUE)
 		ShowFinalResult(dp, m_nPyrRS, m_rRect, m_InsResult);
-<<<<<<< HEAD
-=======
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-		rectangle(dp, cv::Point(m_nROI_x, m_nROI_y), cv::Point(m_nROI_x+m_nROI_width, m_nROI_y+m_nROI_height), Scalar(0, 255, 0), 2, 8, 0);
-
-// 	if(m_CFResult.bFindComplete == TRUE)
-// 	{
-// 		InspectResult(dp, m_nPyrRS, m_rRect, m_CFResult);
-// 	}
-
-	if(m_nEPCount > 0 || m_CFResult.bFindComplete == TRUE)
-		ShowFinalResult(dp, m_nPyrRS, m_rRect, m_MCResult);
-<<<<<<< HEAD
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 		 
 	IplImage* bgr_frame;
 	IplImage copy;
@@ -390,19 +301,7 @@ void CImageSimulationDlg::DrawImage(Mat mat)
 
 	vImage.DrawToHDC(dc.m_hDC, &rect);
 	
-<<<<<<< HEAD
 	if(m_nRectFindMode == RECTANGLE_EVIEION && m_InsResult.mMC.bFind)
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-	if(m_nRectFindMode == RECTANGLE_EVIEION && m_InsResult.mMC.bFind)
-=======
-	if(m_nEPCount > 0)
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
-	if(m_nEPCount > 0)
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	{
 		float fscaleX, fscaleY;
 		fscaleX = (float)rect.right / (float)pDlg_EP->ePatImage.GetWidth(); 
@@ -415,49 +314,6 @@ void CImageSimulationDlg::DrawImage(Mat mat)
 
 		SelectObject(dc.m_hDC,rOldPen); // 이전브러쉬를 다시 선택
 		DeleteObject(rPen); // 새로 생성한 브러쉬 삭제
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-
-		// DC to Image 저장 테스트
-// 		SaveBitmapToDirectFile(CDC::FromHandle(dc.m_hDC), rect, 24, "TestSaveImage.jpg");
-// 		SaveResultImage(m_mat, m_eMatch, "TestSaveImage2.jpg");
-		
-	/*	
-		CvvImage vImg2;
-		vImg2.CopyOf(bgr_frame, 1);
-		RECT rect2;
-		rect2.left = 0;
-		rect2.top = 0;
-		rect2.right = m_mat.cols;
-		rect2.bottom = m_mat.rows;
-
-		HDC hdc,hMemDC; 
-		HBITMAP MyBitmap; 
-
-		hdc=CreateDC(TEXT("DISPLAY"),NULL,NULL,NULL); 
-		hMemDC=CreateCompatibleDC(hdc); 
-		MyBitmap=CreateCompatibleBitmap(hdc,rect2.right,rect2.bottom); 
-		SelectObject(hMemDC,MyBitmap); 
-
-		vImg2.DrawToHDC(hMemDC, &rect2);
-
-		HPEN rPen2 = CreatePen(PS_DOT, 1, DPINK);
-		HGDIOBJ rOldPen2 = (HPEN)SelectObject(hMemDC, rPen);
-
-		m_eMatch.DrawPositions(hMemDC, FALSE, 1, 1, 0, 0);
-		SaveBitmapToDirectFile(CDC::FromHandle(hMemDC), rect2, 24, "TestSaveImage3.jpg");
-		*/
-
-<<<<<<< HEAD
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	}
 }
 
@@ -467,42 +323,13 @@ void CImageSimulationDlg::OnBnClickedButton1()
 	// _T("Excel 파일 (*.xls, *.xlsx) |*.xls; *.xlsx|"); 와 같이 확장자를 제한하여 표시할 수 있음
 	CFileDialog dlg(TRUE, _T("*.dat"), NULL, OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT, str, this);
 	if (dlg.DoModal() == IDOK)
-<<<<<<< HEAD
 	{		
 		InitResult(m_InsResult);
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-	{		
-		InitResult(m_InsResult);
-=======
-	{
-		m_nEPCount = 0;
-		InitCircleParam(m_CFResult);
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
-	{
-		m_nEPCount = 0;
-		InitCircleParam(m_CFResult);
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 
 		m_strPathName = dlg.GetPathName();	
 		
 		Mat input;
-<<<<<<< HEAD
 		input = imread(string(CT2CA(m_strPathName)), CV_LOAD_IMAGE_GRAYSCALE);
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-		input = imread(string(CT2CA(m_strPathName)), CV_LOAD_IMAGE_GRAYSCALE);
-=======
-		input = imread(string(CT2CA(m_strPathName)), CV_LOAD_IMAGE_UNCHANGED);
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
-		input = imread(string(CT2CA(m_strPathName)), CV_LOAD_IMAGE_UNCHANGED);
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 
 		if(!m_mat.empty())
 			m_mat.release();
@@ -558,19 +385,8 @@ void CImageSimulationDlg::OnBnClickedButton2()
 
 	SaveData(PARAMETER_PATH);
 	UpdateData(FALSE);
-<<<<<<< HEAD
 
 	DrawImage(m_mat);
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-	DrawImage(m_mat);
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 }
 
 
@@ -608,11 +424,6 @@ void CImageSimulationDlg::SaveData(CString filename)
 	fprintf(file, "0023|m_bPScalMode =%d\n", pDlg_EP->m_bPScalMode);
 	fprintf(file, "0024|m_bLearnComplete =%d\n", pDlg_EP->m_bLearnComplete);
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	fprintf(file, "0025|m_dbFov =%.3f\n", m_dbFov);
 	fprintf(file, "0026|m_fSamplingRatio =%.3f\n", m_fSamplingRatio);
 	fprintf(file, "0027|m_fMinCircleRadius =%.3f\n", m_fMinCircleRadius);
@@ -624,13 +435,6 @@ void CImageSimulationDlg::SaveData(CString filename)
 	fprintf(file, "0032|m_nRectTH =%d\n", m_nRectTH);
 	
 	
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	fclose(file);
 
 	return;
@@ -646,30 +450,10 @@ void CImageSimulationDlg::InitParam()
 	m_rRect.y = m_nROI_y;
 	m_rRect.width = m_nROI_width;
 	m_rRect.height = m_nROI_height;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 
 	InitResult(m_InsResult);
 
 //	SetTimer(TIMER_REFRESH, 2000, NULL);
-<<<<<<< HEAD
-=======
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-	m_nEPCount = 0;
-
-	InitMResult(m_MCResult);
-
-	SetTimer(TIMER_REFRESH, 2000, NULL);
-<<<<<<< HEAD
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	VersionCheck();
 	pDlg_EP->UpLoadData();
 	UpdateData(FALSE);
@@ -721,11 +505,6 @@ void CImageSimulationDlg::LoadData(CString filename)
 		case 22:		pDlg_EP->m_fPScaleEachMin = atof(temp);		break;
 		case 23:		pDlg_EP->m_bPScalMode = atoi(temp);			break;
 		case 24:		pDlg_EP->m_bLearnComplete = atoi(temp);		break;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 
 		case 25:		m_dbFov = atof(temp);						break;
 		case 26:		m_fSamplingRatio = atof(temp);				break;
@@ -737,13 +516,6 @@ void CImageSimulationDlg::LoadData(CString filename)
 		case 31:		m_nRangeInRect = atoi(temp);				break;
 		case 32:		m_nRectTH = atoi(temp);						break;
 			
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 		}
 	}
 	File.Close();
@@ -796,25 +568,9 @@ void CImageSimulationDlg::OnBnClickedButtonRansacUseBinary()
 	// 이미지 전처리 후 진행
 //	IP.RansacPreprocess(m_mat, m_tMat, m_nGKernel, m_nTH);
 	BOOL bRtn = FALSE;
-<<<<<<< HEAD
 	__Circle _c;
 	bRtn = CircleFit(m_nPyrRS, m_mat, SetCircleRect(m_rRect), _c, TRUE, m_nGKernel, m_nTH, m_bImageDebug);
 	SetRSCResult(bRtn, _c);
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-	__Circle _c;
-	bRtn = CircleFit(m_nPyrRS, m_mat, SetCircleRect(m_rRect), _c, TRUE, m_nGKernel, m_nTH, m_bImageDebug);
-	SetRSCResult(bRtn, _c);
-=======
-	bRtn = CircleFit(m_nPyrRS, m_mat, m_rRect, m_CFResult, TRUE, m_nGKernel, m_nTH, m_bImageDebug);
-	SetCircleResult(bRtn, m_CFResult);
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
-	bRtn = CircleFit(m_nPyrRS, m_mat, m_rRect, m_CFResult, TRUE, m_nGKernel, m_nTH, m_bImageDebug);
-	SetCircleResult(bRtn, m_CFResult);
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 
 	if(!bRtn)		
 		AfxMessageBox("Search Fail");
@@ -850,23 +606,7 @@ Rect CImageSimulationDlg::rect_normalize(int rsize, Rect rect)
 
 BOOL CImageSimulationDlg::CircleFit(int rsize, Mat src, Rect roi, __Circle& rc, BOOL bBin, int gK, int nTH, BOOL bImgDebug)
 {
-<<<<<<< HEAD
 	__Circle _c;
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-	__Circle _c;
-=======
-	vector<__Circle> _c;
-	
-	InitCircleParam(rc);
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
-	vector<__Circle> _c;
-	
-	InitCircleParam(rc);
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 
 	Rect rect_roi;
 	
@@ -878,11 +618,6 @@ BOOL CImageSimulationDlg::CircleFit(int rsize, Mat src, Rect roi, __Circle& rc, 
 	rect_roi = rect_normalize(rsize, roi);
 	//ShowResultImage(BINARY_IMAGE, src);
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	_c = IP.RansacCircleFit(src, rect_roi, bBin, gK, nTH, bImgDebug, m_fMinCircleRadius, m_fSamplingRatio);	// 이미지 전처리 후 진행
 
 	QueryPerformanceCounter(&end);
@@ -892,25 +627,6 @@ BOOL CImageSimulationDlg::CircleFit(int rsize, Mat src, Rect roi, __Circle& rc, 
 		_c.tact = (end.QuadPart - start.QuadPart)/(float)(timer.QuadPart)*1000;
 
 		rc = _c;
-<<<<<<< HEAD
-=======
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-	_c = IP.RansacCircleFit(src, rect_roi, bBin, gK, nTH, bImgDebug);	// 이미지 전처리 후 진행
-
-	QueryPerformanceCounter(&end);
-
-	if(_c.size())
-	{
-		_c[0].tact = (end.QuadPart - start.QuadPart)/(float)(timer.QuadPart)*1000;
-
-		rc = _c[0];
-<<<<<<< HEAD
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 		return TRUE;
 	}
 
@@ -938,31 +654,11 @@ void CImageSimulationDlg::InspectResult(Mat mat, int rsize, Rect roi, __Circle c
 // 	sprintf_s(buf1, "Tact [ %8.3f ms ]", c.tact);
 // 	putText(_rm, buf1, cv::Point(20, 30), CV_FONT_HERSHEY_SIMPLEX, 0.8, Scalar(150, 150, 150), 2, 1);
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	sprintf_s(buf1, "Center pos : %d, %d ", c.center.x, c.center.y);
 	putText(_rm, buf1, cv::Point(20, 30), CV_FONT_HERSHEY_SIMPLEX, 0.8, Scalar(150, 150, 150), 2, 1);
 
 	circle(_rm, c.center, c.radius, cv::Scalar(255,255,0),2);
 	circle(_rm, c.center, 2, Scalar(255,0,0),2);
-<<<<<<< HEAD
-=======
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-	sprintf_s(buf1, "Center pos : %d, %d ", c.xCenter, c.yCenter);
-	putText(_rm, buf1, cv::Point(20, 30), CV_FONT_HERSHEY_SIMPLEX, 0.8, Scalar(150, 150, 150), 2, 1);
-
-	circle(_rm, cv::Point(c.xCenter, c.yCenter), c.radius, cv::Scalar(255,255,0),2);
-	circle(_rm, cv::Point(c.xCenter, c.yCenter), 2, Scalar(255,0,0),2);
-<<<<<<< HEAD
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 
 	ShowResultImage(RESULT_WINDOW, _rm);
 }
@@ -984,11 +680,6 @@ void CImageSimulationDlg::ShowFinalResult(Mat mat, int rsize, Rect roi, __MatchR
 	CString st;
 	char buf1[100];
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	if(mr.mRS.ran_circ.bFind== TRUE)
 	{
 		sprintf_s(buf1, "Circle Center pos : %d, %d ", mr.mRS.ran_circ.center.x, mr.mRS.ran_circ.center.y);
@@ -1078,47 +769,6 @@ void CImageSimulationDlg::ShowFinalResult(Mat mat, int rsize, Rect roi, __MatchR
 		}
 	}
 	
-<<<<<<< HEAD
-=======
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-	if(mr.bCCcomp == TRUE)
-	{
-		sprintf_s(buf1, "Circle Center pos : %d, %d ", mr.xCenter, mr.yCenter);
-		putText(_rm, buf1, cv::Point(mr.xCenter, mr.yCenter-20), CV_FONT_HERSHEY_SIMPLEX, 1, Scalar(0,0,255), 2, 1);
-
-		circle(_rm, cv::Point(mr.xCenter, mr.yCenter), mr.radius, cv::Scalar(255,255,0),2);
-		circle(_rm, cv::Point(mr.xCenter, mr.yCenter), 3, Scalar(0,0,255),2);
-
-		sprintf_s(buf1, "RANSAC Tact : %.3f", m_MCResult.tact);
-		putText(_rm, buf1, cv::Point(20, 30), CV_FONT_HERSHEY_SIMPLEX, 1, Scalar(150, 150, 150), 3, 1);
-	}	
-
-	if(mr.bEMcomp == TRUE)
-	{
-		CString sText;		
-		circle(_rm, cv::Point(m_MCResult.pEResult.m_f32CenterX, m_MCResult.pEResult.m_f32CenterY), 2, Scalar(0,255,0),2);
-
-		sprintf_s(buf1, "Rect Center pos : %.f, %.f ", m_MCResult.pEResult.m_f32CenterX, m_MCResult.pEResult.m_f32CenterY);
-		putText(_rm, buf1, cv::Point((int)m_MCResult.pEResult.m_f32CenterX, (int)m_MCResult.pEResult.m_f32CenterY + 40), CV_FONT_HERSHEY_SIMPLEX, 1, Scalar(0,255,0), 2, 1);
-
-		sprintf_s(buf1, "Pattern Matching Rate : %.3f", m_MCResult.pEResult.m_f32Score*100);
-		putText(_rm, buf1, cv::Point(20, 70), CV_FONT_HERSHEY_SIMPLEX, 1, Scalar(150, 150, 150), 3, 1);
-	}
-
-	if(mr.bEMcomp && mr.bCCcomp)
-	{
-		sprintf_s(buf1, "Circle - Rect Dist : %.3f [pixel]", mr.dist);
-		putText(_rm, buf1, cv::Point(20, 110), CV_FONT_HERSHEY_SIMPLEX, 1, Scalar(150, 150, 150), 3, 1);
-
-		line(_rm, cv::Point(mr.xCenter, mr.yCenter), cv::Point(m_MCResult.pEResult.m_f32CenterX, m_MCResult.pEResult.m_f32CenterY), Scalar(0, 255, 255), 2,8,0);
-	}
-<<<<<<< HEAD
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 }
 
 void CImageSimulationDlg::OnBnClickedButtonRansacUseNomalImage()
@@ -1127,61 +777,18 @@ void CImageSimulationDlg::OnBnClickedButtonRansacUseNomalImage()
 	{
 		AfxMessageBox("이미지 로드를 먼저 진행해야 합니다.");
 		return;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	}	
 
 	BOOL bRtn = FALSE;
 	__Circle _c;
 	bRtn = CircleFit(m_nPyrRS, m_mat, SetCircleRect(m_rRect), _c, FALSE, m_nGKernel, m_nTH, m_bImageDebug);
 	SetRSCResult(bRtn, _c);
-<<<<<<< HEAD
-=======
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-	}
-
-	//destroyAllWindows();
-
-	BOOL bRtn = FALSE;
-	bRtn = CircleFit(m_nPyrRS, m_mat, m_rRect, m_CFResult, FALSE, m_nGKernel, m_nTH, m_bImageDebug);
-	SetCircleResult(bRtn, m_CFResult);
-<<<<<<< HEAD
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 
 	if(!bRtn)		
 		AfxMessageBox("Search Fail");
 	DrawImage(m_mat);
 }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-void CImageSimulationDlg::InitCircleParam(__Circle& c)
-{
-	c.bFindComplete = FALSE;
-	c.radius = 0;
-	c.xCenter = 0;
-	c.yCenter = 0;
-	c.tact = 0.;
-}
-
-<<<<<<< HEAD
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 BOOL CImageSimulationDlg::PreTranslateMessage(MSG* pMsg)
 {
 	MapMessage(pMsg);
@@ -1290,19 +897,7 @@ void CImageSimulationDlg::OnBnClickedButtonReload()
 	if(m_strPathName != "")
 	{
 		m_mat.release();
-<<<<<<< HEAD
 		m_mat = imread(string(CT2CA(m_strPathName)), CV_LOAD_IMAGE_GRAYSCALE);
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-		m_mat = imread(string(CT2CA(m_strPathName)), CV_LOAD_IMAGE_GRAYSCALE);
-=======
-		m_mat = imread(string(CT2CA(m_strPathName)), CV_LOAD_IMAGE_UNCHANGED);
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
-		m_mat = imread(string(CT2CA(m_strPathName)), CV_LOAD_IMAGE_UNCHANGED);
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 		m_tMat.release();
 		m_rMat.release();
 	}
@@ -1322,11 +917,6 @@ void CImageSimulationDlg::OnBnClickedButtonPatternMatching()
 	{
 		AfxMessageBox("Pattern Matching Recipe를 통해 Learn을 진행해주십시오");
 		return;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	}	
 
 	if(m_nRectFindMode == RECTANGLE_EVIEION)
@@ -1347,47 +937,15 @@ void CImageSimulationDlg::OnBnClickedButtonPatternMatching()
 		InitRANSACParam(1);
 
 		__RANSAC _r;
-<<<<<<< HEAD
-		_r = IP.RansacProcess(RANSAC_LINE, m_mat, m_rRect, TRUE, m_nGKernel, m_nRectTH, m_bImageDebug, m_nRangeInRect, m_fSamplingRatio, m_nPerInRect);
-=======
 		_r = IP.RansacProcess(RANSAC_LINE, m_mat, m_rRect, TRUE, m_nGKernel, m_nRectTH, TRUE, m_nRangeInRect, m_fSamplingRatio, m_nPerInRect);
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 		SetRSRResult(_r.ran_rect.bFind, _r.ran_rect);
 	}
 
 	DrawImage(m_mat);
-<<<<<<< HEAD
-=======
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-	}
-	int nResult = 0;
-	if(pDlg_EP->m_bLearnComplete)
-	{
-		pDlg_EP->PreprocessLearn();
-		pDlg_EP->eImageLoad(MATCH_PATRN_IMAGE, m_strPathName);		
-		
-		m_eMatch = pDlg_EP->TempleteMatch(pDlg_EP->eSrcImage, pDlg_EP->ePatImage, pDlg_EP->eRoiImage, pDlg_EP->m_rROIRect, TRUE, FALSE, TRUE);
-		SetEMResult(m_eMatch);		
-	}
-
-	if(m_nEPCount > 0)
-		DrawImage(m_mat);
-<<<<<<< HEAD
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 }
 
 void CImageSimulationDlg::SetEMResult(EMatch mch)
 {	
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	EMatchPosition* position;
 	if(mch.GetNumPositions() > 0)
 	{
@@ -1467,58 +1025,6 @@ void CImageSimulationDlg::SetRSRResult(BOOL bSuccess, __Rectangle rt)
 	if(m_InsResult.mMC.bFind && m_InsResult.mRS.ran_circ.bFind)
 	{
 		m_InsResult.dist = Distance(m_InsResult.mRS.ran_circ.center, cv::Point(m_InsResult.mMC.mMCpos.m_f32CenterX, m_InsResult.mMC.mMCpos.m_f32CenterY));
-<<<<<<< HEAD
-=======
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-	m_nEPCount = mch.GetNumPositions();
-
-	EMatchPosition* position;
-	if(m_nEPCount>0)
-	{
-		position = mch.GetPosition(0);
-
-		m_MCResult.bEMcomp = TRUE;
-		m_MCResult.pEResult.m_bInterpolated = position->m_bInterpolated;
-		m_MCResult.pEResult.m_f32Angle = position->m_f32Angle;
-		m_MCResult.pEResult.m_f32AreaRatio = position->m_f32AreaRatio;
-		m_MCResult.pEResult.m_f32CenterX = (float)change_PrymidValue(m_nPyrRS, (double)position->m_f32CenterX);
-		m_MCResult.pEResult.m_f32CenterY = (float)change_PrymidValue(m_nPyrRS, (double)position->m_f32CenterY);
-		m_MCResult.pEResult.m_f32Reserved = position->m_f32Reserved;
-		m_MCResult.pEResult.m_f32Scale = position->m_f32Scale;
-		m_MCResult.pEResult.m_f32ScaleX = position->m_f32ScaleX;
-		m_MCResult.pEResult.m_f32ScaleY = position->m_f32ScaleY;
-		m_MCResult.pEResult.m_f32Score = position->m_f32Score;
-	}
-
-	if(m_MCResult.bEMcomp && m_MCResult.bCCcomp)
-	{
-		m_MCResult.dist = Distance(cv::Point(m_MCResult.xCenter, m_MCResult.yCenter), cv::Point(m_MCResult.pEResult.m_f32CenterX, m_MCResult.pEResult.m_f32CenterY));
-	}
-}
-
-void CImageSimulationDlg::SetCircleResult(BOOL bSuccess, __Circle cc)
-{	
-	if(bSuccess)
-	{
-		m_MCResult.bCCcomp = m_CFResult.bFindComplete = bSuccess;
-		m_MCResult.radius = cc.radius;
-		m_MCResult.xCenter = cc.xCenter;
-		m_MCResult.yCenter = cc.yCenter;
-		m_MCResult.tact = cc.tact;
-	}
-	else
-		InitCircleParam(m_CFResult);
-
-	if(m_MCResult.bEMcomp && m_MCResult.bCCcomp)
-	{
-		m_MCResult.dist = Distance(cv::Point(m_MCResult.xCenter, m_MCResult.yCenter), cv::Point(m_MCResult.pEResult.m_f32CenterX, m_MCResult.pEResult.m_f32CenterY));
-<<<<<<< HEAD
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	}
 }
 
@@ -1543,11 +1049,6 @@ void CImageSimulationDlg::MakeDir(CString path)
 	}while(len!=str.GetLength ()+1);
 }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 void CImageSimulationDlg::InitResult(__MatchResult& mr)
 {
 	mr.mRS.ran_circ.bFind = FALSE;
@@ -1611,34 +1112,6 @@ void CImageSimulationDlg::InitEMATCHParam()
 	m_InsResult.mMC.mMCpos.m_f32ScaleX = 0.;
 	m_InsResult.mMC.mMCpos.m_f32ScaleY = 0.;
 	m_InsResult.mMC.mMCpos.m_f32Score = 0.;
-<<<<<<< HEAD
-=======
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-void CImageSimulationDlg::InitMResult(__MatchResult& mr)
-{
-	mr.bCCcomp = FALSE;
-	mr.radius = 0.;
-	mr.tact = 0.;
-	mr.xCenter = 0;
-	mr.yCenter = 0;
-	mr.bEMcomp = FALSE;
-	mr.pEResult.m_bInterpolated = FALSE;
-	mr.pEResult.m_f32Angle = 0.;
-	mr.pEResult.m_f32AreaRatio = 0.;
-	mr.pEResult.m_f32CenterX = 0.;
-	mr.pEResult.m_f32CenterY = 0.;
-	mr.pEResult.m_f32Reserved = 0.;
-	mr.pEResult.m_f32Scale = 0.;
-	mr.pEResult.m_f32ScaleX = 0.;
-	mr.pEResult.m_f32ScaleY = 0.;
-	mr.pEResult.m_f32Score = 0.;
-<<<<<<< HEAD
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 }
 
 void CImageSimulationDlg::ShowResult()
@@ -1734,11 +1207,6 @@ void CImageSimulationDlg::OnBnClickedButtonInspect()
 					
 					if(Inspection(ff_path))
 						SaveResultImage(m_mat, m_eMatch, ff_sName);
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 //					Mat input, gray;
 //
 //					input = imread(string(CT2CA(ff_path)), CV_LOAD_IMAGE_GRAYSCALE);
@@ -1747,13 +1215,6 @@ void CImageSimulationDlg::OnBnClickedButtonInspect()
 
 
 
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 				}
 			}
 			// 경로(strFolderPath)를 이용하여 이후작업 추가
@@ -1989,19 +1450,7 @@ void CImageSimulationDlg::SaveResultImage(Mat mat, EMatch match, CString path)
 	else
 		save = mat.clone();
 
-<<<<<<< HEAD
 	ShowFinalResult(save, m_nPyrRS, m_rRect, m_InsResult);
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-	ShowFinalResult(save, m_nPyrRS, m_rRect, m_InsResult);
-=======
-	ShowFinalResult(save, m_nPyrRS, m_rRect, m_MCResult);
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
-	ShowFinalResult(save, m_nPyrRS, m_rRect, m_MCResult);
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 
 	IplImage* bgr_frame;
 	IplImage copy;
@@ -2027,11 +1476,6 @@ void CImageSimulationDlg::SaveResultImage(Mat mat, EMatch match, CString path)
 
 	vImg.DrawToHDC(hMemDC, &rect2);
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	if(m_nRectFindMode == RECTANGLE_EVIEION)
 	{
 		HPEN rPen2 = CreatePen(PS_DOT, 1, DPINK);
@@ -2040,20 +1484,6 @@ void CImageSimulationDlg::SaveResultImage(Mat mat, EMatch match, CString path)
 		m_eMatch.DrawPositions(hMemDC, FALSE, 1, 1, 0, 0);
 	}
 	
-<<<<<<< HEAD
-=======
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-	HPEN rPen2 = CreatePen(PS_DOT, 1, DPINK);
-	HGDIOBJ rOldPen2 = (HPEN)SelectObject(hMemDC, rPen2);
-
-	m_eMatch.DrawPositions(hMemDC, FALSE, 1, 1, 0, 0);
-<<<<<<< HEAD
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	SaveBitmapToDirectFile(CDC::FromHandle(hMemDC), rect2, 24, path);	
 
 	DeleteDC(hMemDC); 
@@ -2066,11 +1496,6 @@ BOOL CImageSimulationDlg::Inspection(CString path)
 	if(!m_mat.empty())
 		m_mat.release();
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	m_mat = imread(string(CT2CA(path)), CV_LOAD_IMAGE_GRAYSCALE);
 
 	InitResult(m_InsResult);
@@ -2110,11 +1535,7 @@ BOOL CImageSimulationDlg::Inspection(CString path)
 	{
 		InitRANSACParam(1);
 		
-<<<<<<< HEAD
-		_r = IP.RansacProcess(RANSAC_LINE, m_mat, m_rRect, TRUE, m_nGKernel, m_nRectTH, m_bImageDebug, m_nRangeInRect, m_fSamplingRatio, m_nPerInRect);
-=======
 		_r = IP.RansacProcess(RANSAC_LINE, m_mat, m_rRect, TRUE, m_nGKernel, m_nRectTH, FALSE, m_nRangeInRect, m_fSamplingRatio, m_nPerInRect);
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 		SetRSRResult(_r.ran_rect.bFind, _r.ran_rect);
 
 		if(_r.ran_rect.bFind == TRUE)
@@ -2129,11 +1550,7 @@ BOOL CImageSimulationDlg::Inspection(CString path)
 		InitRANSACParam(0);
 		
 		//bRtn = CircleFit(m_nPyrRS, m_mat, SetCircleRect(m_rRect), _r.ran_circ, TRUE, m_nGKernel, m_nTH, m_bImageDebug);
-<<<<<<< HEAD
-		_r = IP.RansacProcess(RANSAC_CIRCLE, m_mat, SetCircleRect(m_rRect), TRUE, m_nGKernel, m_nTH, m_bImageDebug, m_nRangeInRect, m_fSamplingRatio, m_nPerInRect);
-=======
 		_r = IP.RansacProcess(RANSAC_CIRCLE, m_mat, SetCircleRect(m_rRect), TRUE, m_nGKernel, m_nTH, FALSE, m_nRangeInRect, m_fSamplingRatio, m_nPerInRect);
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 		SetRSCResult(_r.ran_circ.bFind, _r.ran_circ);
 		
 		if(m_InsResult.mRS.ran_circ.bFind == TRUE)
@@ -2199,34 +1616,10 @@ void CImageSimulationDlg::OnBnClickedButtonCircleFind()
 	__Circle _c;
 	bRtn = CircleFit(m_nPyrRS, m_mat, SetCircleRect(m_rRect), _c, m_nCircleFindMode, m_nGKernel, m_nTH, m_bImageDebug);
 	SetRSCResult(bRtn, _c);
-<<<<<<< HEAD
-=======
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-	m_mat = imread(string(CT2CA(path)), CV_LOAD_IMAGE_UNCHANGED);
-
-	m_nEPCount = 0;
-	InitCircleParam(m_CFResult);
-	InitMResult(m_MCResult);
-
-	BOOL bRtn = FALSE, bRtn2 = FALSE;
-	bRtn = CircleFit(m_nPyrRS, m_mat, m_rRect, m_CFResult, TRUE, m_nGKernel, m_nTH, m_bImageDebug);
-	SetCircleResult(bRtn, m_CFResult);
-<<<<<<< HEAD
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 
 	if(!bRtn)		
 		AfxMessageBox("Search Fail");
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	DrawImage(m_mat);
 }
 
@@ -2246,29 +1639,3 @@ Rect CImageSimulationDlg::SetCircleRect(Rect rect)
 
 	return cRect;
 }
-<<<<<<< HEAD
-=======
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-	int nResult = 0;
-	if(pDlg_EP->m_bLearnComplete)
-	{
-		pDlg_EP->PreprocessLearn();
-		pDlg_EP->eImageLoad(MATCH_PATRN_IMAGE, path);		
-
-		m_eMatch = pDlg_EP->TempleteMatch(pDlg_EP->eSrcImage, pDlg_EP->ePatImage, pDlg_EP->eRoiImage, pDlg_EP->m_rROIRect, TRUE, FALSE, TRUE);
-		SetEMResult(m_eMatch);
-
-		if(m_nEPCount > 0)
-			bRtn2 = TRUE;
-	}
-
-	return bRtn || bRtn2;
-<<<<<<< HEAD
-}
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
-}
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c

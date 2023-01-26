@@ -52,17 +52,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>D:\ImageSimulation\Include</AdditionalIncludeDirectories>
-<<<<<<< HEAD
       <DisableSpecificWarnings>4018</DisableSpecificWarnings>
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <DisableSpecificWarnings>4018</DisableSpecificWarnings>
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

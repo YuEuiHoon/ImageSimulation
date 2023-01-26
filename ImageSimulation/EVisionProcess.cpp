@@ -7,22 +7,10 @@
 #include "afxdialogex.h"
 #include "EVisionProcess.h"
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 
 #include <time.h>
 #include <math.h>
 
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 EVisionProcess *pDlg_EP;
 // EVisionProcess dialog
 
@@ -31,19 +19,8 @@ IMPLEMENT_DYNAMIC(EVisionProcess, CDialog)
 EVisionProcess::EVisionProcess(CWnd* pParent /*=NULL*/)
 	: CDialog(EVisionProcess::IDD, pParent)
 	, m_bMatchMode(FALSE)
-<<<<<<< HEAD
 	, m_dbRtAngle(0)
 	, m_nRSTh(50)
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-	, m_dbRtAngle(0)
-	, m_nRSTh(50)
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 {
 	m_nP_ROI_y = 11;
 	m_nP_ROI_x = 22;
@@ -88,19 +65,8 @@ void EVisionProcess::DoDataExchange(CDataExchange* pDX)
 	DDX_Text(pDX, IDC_EDIT_P_SCALE_EACH_MIN, m_fPScaleEachMin);
 	DDX_Radio(pDX, IDC_RADIO_SCALE_MODE, m_bPScalMode);
 	DDX_Radio(pDX, IDC_RADIO_MATCH_MODE, m_bMatchMode);
-<<<<<<< HEAD
 	DDX_Text(pDX, IDC_EDIT_ROTATE_ANGLE, m_dbRtAngle);
 	DDX_Text(pDX, IDC_EDIT_RANSAC_TH, m_nRSTh);
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-	DDX_Text(pDX, IDC_EDIT_ROTATE_ANGLE, m_dbRtAngle);
-	DDX_Text(pDX, IDC_EDIT_RANSAC_TH, m_nRSTh);
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 }
 
 
@@ -121,22 +87,10 @@ BEGIN_MESSAGE_MAP(EVisionProcess, CDialog)
 	ON_BN_CLICKED(IDC_BUTTON4, &EVisionProcess::OnBnClickedButton4)
 	ON_BN_CLICKED(IDC_RADIO_MATCH_MODE, &EVisionProcess::OnBnClickedRadioMatchMode)
 	ON_BN_CLICKED(IDC_RADIO_MATCH_MODE2, &EVisionProcess::OnBnClickedRadioMatchMode2)
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	ON_BN_CLICKED(IDC_BUTTON_ROTATE_CW, &EVisionProcess::OnBnClickedButtonRotateCw)
 	ON_BN_CLICKED(IDC_BUTTON_ROTATE_CCW, &EVisionProcess::OnBnClickedButtonRotateCcw)
 	ON_BN_CLICKED(IDC_BUTTON_ROTATE, &EVisionProcess::OnBnClickedButtonRotate)
 	ON_BN_CLICKED(IDC_BUTTON5, &EVisionProcess::OnBnClickedButton5)
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 END_MESSAGE_MAP()
 
 
@@ -154,11 +108,6 @@ BOOL EVisionProcess::OnInitDialog()
 }
 void EVisionProcess::SetZoom()
 {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	if(m_bMatchMode == MATCH_LEARN_IMAGE)
 	{
 		nImageSizeX = eSrcImage.GetWidth();				// 가로
@@ -173,22 +122,6 @@ void EVisionProcess::SetZoom()
 	fscaleX = (float)nRectView.Width() / (float)nImageSizeX; 
 	fscaleY = (float)nRectView.Height() / (float)nImageSizeY;
 	  
-<<<<<<< HEAD
-=======
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-	nImageSizeX = eSrcImage.GetWidth();				// 가로
-	nImageSizeY = eSrcImage.GetHeight();			// 세로
-
-	fscaleX = (float)nRectView.Width() / (float)nImageSizeX; 
-	fscaleY = (float)nRectView.Height() / (float)nImageSizeY;
-
-<<<<<<< HEAD
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	DrawEPImage(eSrcImage);
 }
 
@@ -244,21 +177,9 @@ void EVisionProcess::InitParam()
 	m_nMatchNums = 0;
 	m_nCBContrast = 0;
 	m_nCBCorrMode = 0;
-<<<<<<< HEAD
 
 	m_dbAngle = 0.;
 	//SetRotate(MODE_ABSOLUTE);
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-	m_dbAngle = 0.;
-	//SetRotate(MODE_ABSOLUTE);
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 }
 
 
@@ -429,17 +350,6 @@ void EVisionProcess::DrawImageInformation(int mode, CString path)
 		GetDlgItem(IDC_STATIC_IMAGE_PATH)->SetWindowText(sDP);
 	else
 		GetDlgItem(IDC_STATIC_IMAGE_PATH2)->SetWindowText(sDP);
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-	UpdateData(FALSE);	
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
-	UpdateData(FALSE);	
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 }
 
 
@@ -692,11 +602,6 @@ void EVisionProcess::OnBnClickedButtonExecute()
 		ShowResult(FALSE);
 }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 void EVisionProcess::OnBnClickedButton4()
 {
 	UpdateData(TRUE);
@@ -707,37 +612,6 @@ void EVisionProcess::OnBnClickedButton4()
 
 	IP.RansacProcess(RANSAC_LINE, rans, m_rP_ROIRect, TRUE, 15, m_nRSTh, FALSE, 100);
 
-<<<<<<< HEAD
-=======
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-
-void EVisionProcess::OnBnClickedButton4()
-{
-	CString str = _T("Image files(*.jpg, *.bmp, *png)|*.jpg; *.bmp; *png|"); // 모든 파일 표시
-	// _T("Excel 파일 (*.xls, *.xlsx) |*.xls; *.xlsx|"); 와 같이 확장자를 제한하여 표시할 수 있음
-	CFileDialog dlg(TRUE, _T("*.dat"), NULL, OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT, str, this);
-	if (dlg.DoModal() == IDOK)
-	{
-		m_sPatPath = dlg.GetPathName();	
-
-		// Mat input;
-		// input = imread(string(CT2CA(m_sPath)), CV_LOAD_IMAGE_UNCHANGED);
-
-		// 	pDlg_EP->simgPath = m_strPathName;
-		char *pChar = (LPSTR)(LPCTSTR)(m_sPatPath);
-		ePatImage.Load(pChar);
-		CString sDP;
-		sDP.Format("  %s", m_sPatPath);
-		GetDlgItem(IDC_STATIC_IMAGE_PATH2)->SetWindowText(sDP);
-		//DrawImageInformation(m_sPath);
-	}
-<<<<<<< HEAD
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 }
 
 
@@ -874,34 +748,15 @@ void EVisionProcess::LearnImage(EImageBW8& eSrc, EImageBW8& ePat, EROIBW8& eRoi,
 
 	CString f_path;
 	f_path.Format("%s\\LearnImage.bmp", LEARN_IMAGE_PATH);
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 
 	char *pChar = (LPSTR)(LPCTSTR)(f_path);
 
 	eSrc.Save(pChar);
 	//CopyFile(m_sPath, f_path, FALSE);
-<<<<<<< HEAD
-=======
-=======
-	CopyFile(m_sPath, f_path, FALSE);
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
-	CopyFile(m_sPath, f_path, FALSE);
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 }
 
 void EVisionProcess::eImageLoad(BOOL bMode, CString path)
 {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	if(bMode == MATCH_LEARN_IMAGE)
 	{
 		ConvertChannel(path, eSrcImage);
@@ -913,30 +768,6 @@ void EVisionProcess::eImageLoad(BOOL bMode, CString path)
 	}
 	SetZoom();
 	m_sPatPath = path;	
-<<<<<<< HEAD
-=======
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-	char *pChar = (LPSTR)(LPCTSTR)(path);
-
-	if(bMode == MATCH_LEARN_IMAGE)
-	{
-		m_sPath = path;
-		eSrcImage.Load(pChar);
-		SetZoom();
-	}
-	else
-	{
-		m_sPatPath = path;	
-		ePatImage.Load(pChar);		
-	}
-
-<<<<<<< HEAD
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	DrawImage(bMode);
 	DrawImageInformation(bMode, path);
 }
@@ -949,11 +780,6 @@ void EVisionProcess::PreprocessLearn()
 	eImageLoad(MATCH_LEARN_IMAGE, path);
 	int match_cnt = 0;
 	TempleteMatch(eSrcImage, ePatImage, eRoiImage, m_rP_ROIRect, TRUE, TRUE, FALSE);
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 }
 
 bool EVisionProcess::ConvertChannel(CString path, EImageBW8 &eImg)
@@ -1058,12 +884,3 @@ void EVisionProcess::OnBnClickedButton5()
 	IP.RotateMat(m_mLoadImage, rtt, GetAngle());
 	imwrite("Rotate Image.bmp", rtt);
 }
-<<<<<<< HEAD
-=======
-=======
-}
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
-}
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c

@@ -68,11 +68,6 @@ using namespace cv;
 // 기본 숫자 define
 #define TIMER_REFRESH		1111
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 #define LEFT				0
 #define TOP					1
 #define RIGHT				2
@@ -90,13 +85,6 @@ using namespace cv;
 #define RECTANGLE_OPENCV	1		// RANSAC Line Fitting 활용
 
 
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 enum {
 	// 빨간색
 	RED					=	0x000000ff,
@@ -156,11 +144,6 @@ enum {
 	DGRAY				=	0x00707070,
 };
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 struct __Circle{
 	bool bFind;
 	double radius;
@@ -200,23 +183,4 @@ struct __MatchResult{
 	__RANSAC mRS;
 	__MATCH  mMC;
 	double dist;	
-<<<<<<< HEAD
-=======
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-struct __MatchResult{
-	BOOL bCCcomp;
-	double radius;
-	int xCenter;
-	int yCenter;
-	float tact;
-	BOOL bEMcomp;
-	EMatchPosition pEResult;
-	double dist;
-<<<<<<< HEAD
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 };

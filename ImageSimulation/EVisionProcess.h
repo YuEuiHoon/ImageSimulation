@@ -9,19 +9,8 @@
 #define MATCH_LEARN_IMAGE		0
 #define MATCH_PATRN_IMAGE		1
 
-<<<<<<< HEAD
 #define MODE_RELATIVE			0
 #define MODE_ABSOLUTE			1
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define MODE_RELATIVE			0
-#define MODE_ABSOLUTE			1
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 
 class EVisionProcess : public CDialog
 {
@@ -101,11 +90,6 @@ public:
 	int						m_nCBContrast;
 	int						m_nCBCorrMode;
 	void					PreprocessLearn();
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	bool					ConvertChannel(CString path, EImageBW8 &eImg);
 	bool					MatToEImage(Mat src, EImageBW8 &dst);
 	double					m_dbAngle;
@@ -113,15 +97,6 @@ public:
 	double					GetAngle()	{return m_dbAngle;}
 	void					SetRotate(BOOL bMode);
 	Mat						m_mLoadImage;
-<<<<<<< HEAD
-=======
-=======
-
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
-
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	// Dialog Data
 	enum { IDD = IDD_EVISION_PROCESS };
 
@@ -163,24 +138,12 @@ public:
 	BOOL m_bMatchMode;
 	afx_msg void OnBnClickedRadioMatchMode();
 	afx_msg void OnBnClickedRadioMatchMode2();
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	afx_msg void OnBnClickedButtonRotateCw();
 	afx_msg void OnBnClickedButtonRotateCcw();
 	double m_dbRtAngle;
 	afx_msg void OnBnClickedButtonRotate();
 	afx_msg void OnBnClickedButton5();
 	int m_nRSTh;
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 };
 
 extern EVisionProcess *pDlg_EP;

@@ -44,26 +44,8 @@ public:
 	void			LoadData(CString filename);
 
 	// Function
-<<<<<<< HEAD
 	BOOL			CircleFit(int rsize, Mat src, Rect roi, __Circle& rc, BOOL bBin = TRUE, int gK = 15, int nTH = 30, BOOL bImgDebug = FALSE);	
 	void			InspectResult(Mat mat, int rsize, Rect roi, __Circle c);
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-	BOOL			CircleFit(int rsize, Mat src, Rect roi, __Circle& rc, BOOL bBin = TRUE, int gK = 15, int nTH = 30, BOOL bImgDebug = FALSE);	
-	void			InspectResult(Mat mat, int rsize, Rect roi, __Circle c);
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-	BOOL			CircleFit(int rsize, Mat src, Rect roi, __Circle& rc, BOOL bBin = TRUE, int gK = 15, int nTH = 30, BOOL bImgDebug = FALSE);
-	__Circle		m_CFResult;
-	void			InspectResult(Mat mat, int rsize, Rect roi, __Circle c);
-	void			InitCircleParam(__Circle& c);
-<<<<<<< HEAD
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 
 	// ROI Setting 
 	void			MapMessage(MSG* pMsg);
@@ -75,11 +57,6 @@ public:
 
 	void			MakeDir(CString path);
 	EMatch			m_eMatch;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 
 	void			InitResult(__MatchResult& mr);
 	void			InitRANSACParam(bool bType);
@@ -89,22 +66,6 @@ public:
 	void			SetEMResult(EMatch mch);
 	void			SetRSCResult(BOOL bSuccess, __Circle cc);
 	void			SetRSRResult(BOOL bSuccess, __Rectangle rt);
-<<<<<<< HEAD
-=======
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-	int				m_nEPCount;
-
-	void			InitMResult(__MatchResult& mr);
-	__MatchResult	m_MCResult;
-	void			SetEMResult(EMatch mch);
-	void			SetCircleResult(BOOL bSuccess, __Circle cc);
-<<<<<<< HEAD
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	void			ShowResult();
 
 	void			ShowFinalResult(Mat mat, int rsize, Rect roi, __MatchResult mr);
@@ -117,17 +78,7 @@ public:
 	cv::Point		RotatePosition(cv::Point rpos, double angle);
 	void			SaveResultImage(Mat mat, EMatch match, CString path);
 	BOOL			Inspection(CString path);
-<<<<<<< HEAD
 	Rect			SetCircleRect(Rect rect);
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-	Rect			SetCircleRect(Rect rect);
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 
 // Dialog Data
 	enum { IDD = IDD_IMAGESIMULATION_DIALOG };
@@ -177,11 +128,6 @@ public:
 	BOOL m_bFolderInspect;
 	afx_msg void OnBnClickedCheckFolderInspect();
 	afx_msg void OnBnClickedButtonInspect();
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	double m_dbFov;
 	float m_fSamplingRatio;
 	float m_fMinCircleRadius;
@@ -197,13 +143,6 @@ public:
 	afx_msg void OnBnClickedRadioCircleFindMode4();
 	afx_msg void OnBnClickedButtonCircleFind();
 	int m_nRectTH;
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 };
 
 extern CImageSimulationDlg g_Dlg_Main;

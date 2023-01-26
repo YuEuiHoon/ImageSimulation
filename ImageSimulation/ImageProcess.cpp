@@ -8,11 +8,6 @@ bool comparePerc(Vec4f vec1, Vec4f vec2)
 	return (i > j);
 }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 bool compareContourAreas(vector<cv::Point> contour1, vector<cv::Point> contour2)
 {
 	double i = fabs(contourArea(Mat(contour1)));
@@ -20,13 +15,6 @@ bool compareContourAreas(vector<cv::Point> contour1, vector<cv::Point> contour2)
 	return (i > j);
 }
 
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 float verifyCircle(Mat dt, Point2f center, float radius, vector<Point2f> & inlierSet)
 {
 	unsigned int counter = 0;
@@ -200,19 +188,7 @@ BOOL ImageProcess::RansacPreprocess(Mat src, Mat& rMat, int gK, int nTH)
 	return TRUE;
 }
 
-<<<<<<< HEAD
 __Circle ImageProcess::RansacCircleFit(Mat src, Rect roi, BOOL bBin, int gK, int nTH, BOOL bImgDebug, float minRadius, float InOutRatio)
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-__Circle ImageProcess::RansacCircleFit(Mat src, Rect roi, BOOL bBin, int gK, int nTH, BOOL bImgDebug, float minRadius, float InOutRatio)
-=======
-vector<__Circle> ImageProcess::RansacCircleFit(Mat src, Rect roi, BOOL bBin, int gK, int nTH, BOOL bImgDebug)
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
-vector<__Circle> ImageProcess::RansacCircleFit(Mat src, Rect roi, BOOL bBin, int gK, int nTH, BOOL bImgDebug)
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 {
 	Mat color;
 	Mat gray, normalized, gray_resize;
@@ -234,44 +210,6 @@ vector<__Circle> ImageProcess::RansacCircleFit(Mat src, Rect roi, BOOL bBin, int
 	gray_resize = gray(Rect(roi.x, roi.y, roi.width, roi.height)).clone();  // 깊은 복사
 
 	Mat mask;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-
-// 	if(!bBin)
-// 	{
-// 		// image normalize
-// 		NormalizeImage(gray_resize, normalized);
-// 		
-// 		if(bImgDebug)
-// 			imshow(NORMALIZE_IMAGE, normalized);
-// 		//--------------------------------
-// 
-// 		// now compute threshold
-// 		// TODO: this might ne a tricky task if noise differs...		
-// 		//cv::threshold(input, mask, 0, 255, CV_THRESH_BINARY | CV_THRESH_OTSU);
-// 		//		threshold(normalized, mask, nTH, 255, CV_THRESH_BINARY);
-// 
-// 		// 가우시안 블러처리
-// 		GaussianBlur(normalized, normalized, Size(gK, gK), 0);
-// 		// 주어진 임계값으로 이미지 이진화 진행
-// 		threshold(normalized, normalized, nTH, 255, THRESH_BINARY);
-// 
-// 		// 캐니엣지를 활용해 엣지 성분 검출
-// 		Canny(normalized, mask, nTH, 125*3,3);
-// 	}
-// 	else
-// 		mask = gray_resize.clone();	
-
-<<<<<<< HEAD
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	if(!bBin)
 	{
 		// image normalize
@@ -310,44 +248,14 @@ vector<__Circle> ImageProcess::RansacCircleFit(Mat src, Rect roi, BOOL bBin, int
 	cv::Point2f bestCircleCenter;
 	float bestCircleRadius;
 	float bestCirclePercentage = 0;
-<<<<<<< HEAD
 	//float minRadius = 50;   // TODO: ADJUST THIS PARAMETER TO YOUR NEEDS, otherwise smaller circles wont be detected or "small noise circles" will have a high percentage of completion
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-	//float minRadius = 50;   // TODO: ADJUST THIS PARAMETER TO YOUR NEEDS, otherwise smaller circles wont be detected or "small noise circles" will have a high percentage of completion
-=======
-	float minRadius = 100;   // TODO: ADJUST THIS PARAMETER TO YOUR NEEDS, otherwise smaller circles wont be detected or "small noise circles" will have a high percentage of completion
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
-	float minRadius = 100;   // TODO: ADJUST THIS PARAMETER TO YOUR NEEDS, otherwise smaller circles wont be detected or "small noise circles" will have a high percentage of completion
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 
 	float minCirclePercentage = 0.03f;  // at least 5% of a circle must be present? maybe more...
 
 	int maxNrOfIterations = edgePositions.size();   // TODO: adjust this parameter or include some real ransac criteria with inlier/outlier percentages to decide when to stop
-<<<<<<< HEAD
 	
 	__Circle bestCircles;
 	InitCircleParam(bestCircles);
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-	
-	__Circle bestCircles;
-	InitCircleParam(bestCircles);
-=======
-
-	vector<__Circle> bestCirclesHough;
-	__Circle c_result;
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
-
-	vector<__Circle> bestCirclesHough;
-	__Circle c_result;
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 
 	vector<Vec4f> fvResult;
 	Vec4f fvTemp;
@@ -357,19 +265,7 @@ vector<__Circle> ImageProcess::RansacCircleFit(Mat src, Rect roi, BOOL bBin, int
 	// fvResult[3]; yCenter
 
 	double dbPercent = 0.99;		// 확률적으로 얼마나 정확한 결과를 기대하는가?
-<<<<<<< HEAD
 	//double InOutRatio = 0.7;		// Inlier 와 outlier 의 비율이 얼마인가? 낮을수록 거짓데이터가 많은 것
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-	//double InOutRatio = 0.7;		// Inlier 와 outlier 의 비율이 얼마인가? 낮을수록 거짓데이터가 많은 것
-=======
-	double InOutRatio = 0.3;		// Inlier 와 outlier 의 비율이 얼마인가? 낮을수록 거짓데이터가 많은 것
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
-	double InOutRatio = 0.3;		// Inlier 와 outlier 의 비율이 얼마인가? 낮을수록 거짓데이터가 많은 것
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	int nSampling;					// 실패확률 계산치
 	// ex dbPercent = 0.99, InOutRatio = 0.7 이라면 n sampling은 48번 돌리면 0.99 퍼센트의 동일한 결과가 나옴
 	// 48번이나 돌리려면 시간이 너무많이 걸림
@@ -419,36 +315,11 @@ vector<__Circle> ImageProcess::RansacCircleFit(Mat src, Rect roi, BOOL bBin, int
 				bestCircleRadius = radius;
 				bestCircleCenter = center;
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 				fvTemp[0] = cPerc;
 				fvTemp[1] = bestCircleRadius;
 				fvTemp[2] = bestCircleCenter.x+roi.x;
 				fvTemp[3] = bestCircleCenter.y+roi.y;
 				fvResult.push_back(fvTemp);
-<<<<<<< HEAD
-=======
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-				c_result.radius = bestCircleRadius;
-				c_result.xCenter = bestCircleCenter.x+roi.x;
-				c_result.yCenter = bestCircleCenter.y+roi.y;
-
-				fvTemp[0] = cPerc;
-				fvTemp[1] = bestCircleRadius;
-				fvTemp[2] = c_result.xCenter;
-				fvTemp[3] = c_result.yCenter;
-				fvResult.push_back(fvTemp);
-
-<<<<<<< HEAD
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 			}
 	}
 
@@ -459,11 +330,6 @@ vector<__Circle> ImageProcess::RansacCircleFit(Mat src, Rect roi, BOOL bBin, int
 		{
 			circle(color, cv::Point(bestCircleCenter.x + roi.x, bestCircleCenter.y + roi.y), bestCircleRadius, Scalar(255,255,0),1);
 			circle(color, cv::Point(bestCircleCenter.x + roi.x, bestCircleCenter.y + roi.y), 2, Scalar(255,0,0),2);
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 
 			bestCircles.radius = bestCircleRadius;
 			bestCircles.center.x = bestCircleCenter.x+roi.x;
@@ -474,23 +340,6 @@ vector<__Circle> ImageProcess::RansacCircleFit(Mat src, Rect roi, BOOL bBin, int
 
 	// 결과 확인용 이미지 처리
 /*
-<<<<<<< HEAD
-=======
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-			c_result.radius = bestCircleRadius;
-			c_result.xCenter = bestCircleCenter.x+roi.x;
-			c_result.yCenter = bestCircleCenter.y+roi.y;
-			bestCirclesHough.push_back(c_result);
-		}
-	}
-
-<<<<<<< HEAD
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	sort(fvResult.begin(), fvResult.end(), comparePerc);
 
 	for(int i = 0; i < fvResult.size(); i++)
@@ -505,28 +354,7 @@ vector<__Circle> ImageProcess::RansacCircleFit(Mat src, Rect roi, BOOL bBin, int
 		{
 			b = 0;		g = rand()%100;			r = rand()%100;
 		}
-<<<<<<< HEAD
 		
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-		
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-		//r = rand()%255;
-		
-
-		// fvResult[0]; Percent
-		// fvResult[1]; radius
-		// fvResult[2]; xCenter
-		// fvResult[3]; yCenter
-
-<<<<<<< HEAD
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 		circle(color, cv::Point(fvResult[i][2], fvResult[i][3]), fvResult[i][1], Scalar(r,g,b),2);
 		circle(color, cv::Point(fvResult[i][2], fvResult[i][3]), 2, Scalar(r,g,b),2);
 
@@ -536,11 +364,6 @@ vector<__Circle> ImageProcess::RansacCircleFit(Mat src, Rect roi, BOOL bBin, int
 		putText(color, buf1, cv::Point(20, (i+1)*30 ), CV_FONT_HERSHEY_SIMPLEX, 0.8, Scalar(r,g,b), 2, 1);
 	}
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
 	namedWindow("output", WINDOW_NORMAL);
 	imshow("output",color);	
  	waitKey(0);
@@ -1135,22 +958,3 @@ void ImageProcess::InitRectangleParam(__Rectangle &rsr)
 	rsr.center = cv::Point(0,0);
 	rsr.tact = 0.;
 }
-<<<<<<< HEAD
-=======
-=======
-=======
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-//	namedWindow("output", WINDOW_NORMAL);
-//	imshow("output",color);
-
-	
- 	//waitKey(0);
-
-	return bestCirclesHough;
-<<<<<<< HEAD
-}
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
-=======
-}
->>>>>>> 31da9830354ebe6cb7c2c77e401a5d58f0f34618
->>>>>>> e8c4d1a5b95cf70f7bec4b408aa87ebae0aa0e2c
